@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack_Odin_Boilerplate</title>
+  <title>Weather App</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,35 +12,18 @@
 </head>
 <body>
 
-  <h1>Library Odin Project (stage 1)</h1>
+  <h1>Weather App (API usage demo)</h1>
+  
+  <div class="weatherDiv">
 
-  <button id='newBookBtn' type="button">NEW BOOK</button>
+    <label> Type your city:
+      <input type="text" id="cityInput"></input>
+    </label>
 
-  <dialog id='newBookModal'>
-    <form method="dialog">
-
-      <label>Title:
-        <input type="text" id="title" placeholder="Different Ways To Eat Carrots" required>
-      </label>
-      <label>Author:
-        <input type="text" id="author" placeholder="Jerry Smith" required>
-      </label>
-      <label>Pages:
-        <input type="number" id="pages" placeholder="9999">
-      </label>
-      <label>Read?:
-        <input type="checkbox" id="read">
-      </label>
-
-      <div class="formBtns">
-        <button id='closeModalBtn' >Close</button>
-        <button id='submitBookBtn' >Submit</button>
-      </div>
-
-    </form>
-  </dialog>
-
-  <section class="booksGrid"></section>
+    <p>Degrees Celsius Temperature: <span id="celsiusSpan"></span></p>
+    <p>Degrees Fahrenheit Temperature: <span id="fahrenheitSpan"></span></p>
+    
+  </div>
 
   <noscript>
     <div class="noscript-warning">
