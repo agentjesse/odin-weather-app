@@ -5,6 +5,7 @@
 
 // JS/CSS imports
 import './styles.css';
+import './assets/loading.svg'; //images used in code NEED to be imported for the webpack generator rule
 import { logToConsole as lg, tableToConsole as tb } from './logger'; //shorthand loggers
 
 //preload an icon in browser cache. just call this fn with the icon url and await its settlement
@@ -84,7 +85,7 @@ const startWeatherFetch = async searchCity=> {
 document.querySelector('#cityInput').addEventListener( 'focusout', e=> {
   e.stopPropagation();
   //add loading image and its animation right away.
-  document.querySelector('.weatherCondition .icon').style.backgroundImage = 'url(\'./assets/loading.svg\')';
+  document.querySelector('.weatherCondition .icon').style.backgroundImage = 'url("./assets/loading.svg")';
   document.querySelector('.weatherCondition .icon').classList.add('loading');
   //clear old results
   document.querySelector('#conditionSpan').textContent = 'Loading...';
