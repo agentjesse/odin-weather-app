@@ -5,7 +5,7 @@
 
 // JS/CSS imports
 import './styles.css';
-import './assets/loading.svg'; //images used in code NEED to be imported for the webpack generator rule
+import './assets/loading.svg'; //import images so webpack adds them to bundle
 import { logToConsole as lg, tableToConsole as tb } from './logger'; //shorthand loggers
 
 //preload an icon in browser cache. just call this fn with the icon url and await its settlement
