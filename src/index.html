@@ -17,12 +17,21 @@
   <div class="weatherDiv">
 
     <label> Type your city:
-      <input type="text" id="cityInput"></input>
+      <input type="text" id="cityInput" placeholder="toronto"></input>
     </label>
 
-    <p>Degrees Celsius Temperature: <span id="celsiusSpan"></span></p>
-    <p>Degrees Fahrenheit Temperature: <span id="fahrenheitSpan"></span></p>
-    
+    <div class="weatherCondition">
+      <div class="iconFrame">
+        <div class="icon loading"></div>
+      </div>
+      <p>Current condition: <span id="conditionSpan"></span></p>
+      <p>Degrees Celsius Temperature: <span id="celsiusSpan"></span></p>
+      <p>Degrees Fahrenheit Temperature: <span id="fahrenheitSpan"></span></p>
+    </div>
+
+
+    <p class="searchNote">*Optionally add a space and the city's country, or click in and out to default search</p>
+
   </div>
 
   <noscript>

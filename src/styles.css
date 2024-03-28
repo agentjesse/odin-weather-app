@@ -11,6 +11,7 @@ button { display: block; cursor: pointer; }
 :root{
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
+  --transparent: hsl(0, 0%, 0%, 0);
   /* tailwind blue palette based, then hue shifted ... CHANGE TO SKY PALETTE to OCD level MATCH TICTACTOE PROJECT */
   --bg950: hsl(199, 91%, 9%);
   --bg900: hsl(197, 86%, 16%);
@@ -23,16 +24,29 @@ button { display: block; cursor: pointer; }
   --fg200: hsl(185, 76%, 80%);
   --fg100: hsl(182, 80%, 90%);
   --fg50:  hsl(185, 81%, 96%);
+
+}
+/* animations */
+@keyframes spinCW {
+  0% {
+    transform: rotate( 0turn );
+  }
+  100% {
+    transform: rotate( 1turn );
+  }
 }
 
 /* main CSS */
 body{
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-weight: 400;
   background-color: var(--fg400);
   h1 {
     text-align: center;
-    margin: 1rem 0;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+    padding: 0.25rem 0;
+    color: var(--white);
+    background: linear-gradient( to bottom, var(--bg700), var(--transparent) );
   }
 }
 .weatherDiv {
@@ -41,4 +55,43 @@ body{
   align-items: center;
   gap: 0.5rem;
   color: var(--fg100);
+  #cityInput {
+    background-color: var(--fg200);
+    border-style: dashed;
+    border-color: var(--white);
+    color: var(--bg900);
+    width: 12rem;
+  }
+  #cityInput::placeholder {
+    color: var(--fg400);
+  }
+  .weatherCondition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    .iconFrame {
+      width: 64px;
+      height: 64px;
+      margin: 1rem 0 0 0;
+      background-color: var(--mg500);
+      box-shadow: 0 0 12px 1px var(--white);
+      .icon {
+        width: inherit;
+        height: inherit;
+        background-size: cover;
+        background-position: center;
+      }
+      .loading {
+        animation: spinCW 1.5s linear infinite;
+      }
+    }
+  }
+  .searchNote {
+    font-size: 0.9rem;
+    margin: 3rem 1rem;
+    color: var(--bg600);
+    background: linear-gradient( to bottom, var(--fg100), var(--transparent) );
+  }
 }
